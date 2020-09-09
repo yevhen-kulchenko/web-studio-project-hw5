@@ -49,7 +49,18 @@
         <section class="banner">
             <div class="container">
                 <h1 class="banner-headline ">Эффективные решения <br> для вашего бизнеса</h1>
-                <a href="" class="button">Заказать услугу</a>
+                <!-- <a href="" class="button">Заказать услугу</a> -->
+                <button class="button" type="button" data-modal-open>Заказать услугу</button>
+            </div>
+            <div class="backdrop is-hidden" data-modal>
+                <div class="modal-window">
+                    <button class="modal-batton" type="button" data-modal-close>
+                        <svg class="close">
+                            <use href="./images/sprite.svg#close"></use>
+                        </svg>
+                    </button>
+
+                </div>
             </div>
         </section>
         
