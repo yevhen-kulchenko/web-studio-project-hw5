@@ -116,8 +116,8 @@ img {
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.02em;
-
     color: var(--primary-text-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link:hover,
 .link:focus {
@@ -144,8 +144,9 @@ img {
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.02em;
-
     color: var(--secondary-text-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .header-contacts:hover,
 .header-contacts:focus {
@@ -160,12 +161,16 @@ img {
     width: 16px;
     height: 12px;
     fill: var(--secondary-text-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .smartphone {
     margin-right: 10px;
     width: 10px;
     height: 16px;
     fill: var(--secondary-text-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 /* banner */
@@ -200,7 +205,6 @@ img {
     line-height: 60px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-
     color: var(--title-text-color);
 }
 
@@ -231,16 +235,21 @@ img {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
 }
+.backdrop.is-hidden .modal-window {
+    transform: translate(-50%, -50%) scale(0.7);
+}
 .modal-window {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     width: 528px;
     height: 581px;
     background-color: var(--main-background-color);
@@ -268,8 +277,10 @@ img {
     width: 18px;
     height: 18px;
     fill: var(--logo-header-color);
+    transition:  fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.close:hover {
+.modal-batton:hover .close,
+.modal-batton:focus .close {
     fill: var(--accent-color);
 }
 
@@ -438,7 +449,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 94px;
+    margin-bottom: 94px;    
 }
 .company-item {
     margin-right: 30px;
@@ -452,39 +463,16 @@ img {
     align-items: center;
     width: 170px;
     height: 90px;
+    fill: #AFB1B8;
     border: 1px solid #AFB1B8;
     box-sizing: border-box;
     border-radius: 4px;
-    fill: #AFB1B8;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .company-link.client-icon:hover,
 .company-link.client-icon:focus {
     fill: var(--accent-color);
     border: 1px solid var(--accent-color);
-}
-.client1 {
-    width: 44px;
-    height: 49px;
-}
-.client2 {
-    width: 40px;
-    height: 52px;
-}
-.client3 {
-    width: 41px;
-    height: 42px;
-}
-.client4 {
-    width: 80px;
-    height: 42px;
-}
-.client5 {
-    width: 59px;
-    height: 47px;
-}
-.client6 {
-    width: 88px;
-    height: 45px;
 }
 
 /* footer*/
@@ -527,9 +515,10 @@ img {
     line-height: 24px;
     letter-spacing: 0.03em;
     color: var(--footer-contact-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-contacts:last-child {
-    padding-bottom: 0;
+    margin-bottom: 0;
 }
 .footer-contacts:hover,
 .footer-contacts:focus {
@@ -563,10 +552,11 @@ img {
     align-items: center;
     width: 44px;
     height: 44px;
-    border-radius: 50%;  
+    border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-icon {
-    fill: #AFB1B8;;
+    fill: #AFB1B8;
 }
 .social-icon-link:hover .team-icon,
 .social-icon-link:focus .team-icon {
@@ -579,6 +569,7 @@ img {
 .social-icon {
     width: 20px;
     height: 20px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-icon-link:hover,
 .social-icon-link:focus {
@@ -589,7 +580,6 @@ img {
 .filters-button .button-item:not(:last-child) {
     margin-right: 8px;
 }
-
 .filters-button {
     display: flex;
     justify-content: center;
@@ -612,7 +602,7 @@ img {
     line-height: 26px;
     letter-spacing: 0.03em;
     cursor: pointer;
-}
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);}
 .portfolio-button {
     color: var(--primary-text-color);
     background-color: var(--button-bg-color);
@@ -633,6 +623,54 @@ img {
 .project-item:nth-last-child(-n+3) {
     margin-bottom: 0;
 }
+.project-card {
+    width: 370px;
+    height: 404px;
+    border: 1px solid #EEEEEE;
+    background-color: var(--main-background-color);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-card:hover,
+.project-card:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
+        0px 4px 4px rgba(0, 0, 0, 0.06), 
+        1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.cover {
+    position: relative;
+    overflow: hidden;
+}
+.cover-project {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.cover-text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+    color: var(--title-text-color);
+}
+.project-card:hover .cover-project {
+    transform: translateY(0);
+}
 .poster {
     display: block;
 }
@@ -641,18 +679,6 @@ img {
     padding-right: 24px;
     padding-top: 20px;
     padding-bottom: 20px;
-}
-.project-bg {
-    width: 370px;
-    height: 404px;
-    border: 1px solid #EEEEEE;
-    background-color: var(--main-background-color);
-}
-.project-bg:hover,
-.project-bg:focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
-        0px 4px 4px rgba(0, 0, 0, 0.06), 
-        1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .link-list {
     text-decoration: none;
